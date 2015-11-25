@@ -6,7 +6,7 @@
 
 <% @gratitudes.each do |gratitude| %>
   <div class="gratitudes">
-    <strong><%= gratitude.name %></strong>
+
     <p><%= gratitude.content %></p>
     <div class="meta">
       <%= link_to time_ago_in_words(gratitude.created_at) + " ago", gratitude %>
