@@ -13,7 +13,8 @@
 
 <% current_user.gratitudes.each do |gratitude| %>
   <div class="gratitudes">
-    <p><%= gratitude.content %></p>
+    <p><b>Name: </b><%= gratitude.user.first_name %> <%= gratitude.user.last_name  %></p>
+    <p><strong>Gratitude: </strong><%= gratitude.content %></p>
     <div class="meta">
       <%= link_to time_ago_in_words(gratitude.created_at) + " ago", gratitude %>
       <span class="admin">
