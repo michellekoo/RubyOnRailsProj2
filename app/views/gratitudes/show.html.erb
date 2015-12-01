@@ -5,7 +5,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<b>Name: </b><%= @gratitude.user.first_name %> <%= @gratitude.user.last_name  %>
+<b>Name: </b><%= User.find(@gratitude.user_id).full_name %>
 
 </p>
 
