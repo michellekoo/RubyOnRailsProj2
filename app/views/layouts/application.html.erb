@@ -12,7 +12,7 @@
 <div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a href="#" class="brand"> Gratitude</a>
+				<!-- <a href="#" class="brand"> Gratitude</a> -->
 				<ul class="nav">
 					<li><%= link_to "All Gratitudes", gratitudes_path %></li>
 				</ul>
@@ -21,8 +21,8 @@
 						<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
 						<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
 					<% else %>
-						<li><%= link_to "Register", new_user_registration_path %></li>
 						<li><%= link_to "Log in", new_user_session_path %></li>
+						<li><%= link_to "Register", new_user_registration_path %></li>
 					<% end %>
 
 				</ul>
