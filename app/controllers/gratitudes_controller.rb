@@ -25,6 +25,9 @@ class GratitudesController < ApplicationController
   # POST /gratitudes.json
   def create
     @gratitude = Gratitude.new(gratitude_params)
+    if @gratitude.user_id != nil
+      @gratitude.user_id = current_user.id
+    end
 
     respond_to do |format|
       if @gratitude.save

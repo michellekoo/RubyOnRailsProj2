@@ -1,16 +1,18 @@
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 <h1><center>Gratitude Journal</center></h1>
+
+<% if current_user %>
 <div class="gratitude-block">
+
 <div class="page-header">
     <h1> All Gratitudes </h1>
 </div>
 
 <%= link_to "Post New Gratitude", new_gratitude_path, class:"btn btn-warning" %>
 
-<% @gratitudes.each do |gratitude| %>
+<% current_user.gratitudes.each do |gratitude| %>
   <div class="gratitudes">
-
     <p><%= gratitude.content %></p>
     <div class="meta">
       <%= link_to time_ago_in_words(gratitude.created_at) + " ago", gratitude %>
@@ -22,5 +24,42 @@
     </div>
 
   </div>
+<% end %>
+
+<% else %>
+
+
+
+<div class="gratitude-block">
+
+<p> Welcome to Gratitude Journal.
+"Keeps you inspired and motivated even when things seem bleak." - Mashable
+
+“Keeping a gratitude journal is the single most important thing I’ve ever done.” - Oprah
+
+It builds on proven principles of positive psychology. 
+
++ A proven format for easy journaling and sharing (if you want)
++ Export to PDF (new)
++ Tag friends and locations
++ Slideshow to view random past entries
++ Passcode protection for your privacy
++ Friendly reminders so you don't miss a day
++ Inspirational quotes and motivational advice
++ Sync and backup so you never lose your entries
++ Photos to let you capture your best moments
+
+“This app kept me going through the worse year of my life.” - Vicki, West Virginia
+
+“Gratitude is a very powerful feeling and this app reminds me each day where to focus my thoughts.” - Sorosh, India
+
+“It got me off life’s treadmill and doing what I really love.” - Barry, Ireland
+    this app will help your keep track of 
+    blah blah blah
+
+    Please sign in first, </p>
+</div>
+
+
 <% end %>
 </div>
