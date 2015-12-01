@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
     attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :user_name 
+    acts_as_voter
    
    # def achievements
    #    #this will also fix the error you see, although it's fundamentally incorrect

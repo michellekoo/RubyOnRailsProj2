@@ -1,6 +1,7 @@
 class GratitudesController < ApplicationController
   before_action :set_gratitude, only: [:show, :edit, :update, :destroy]
 
+
   # GET /gratitudes
   # GET /gratitudes.json
   def index
@@ -19,6 +20,18 @@ class GratitudesController < ApplicationController
 
   # GET /gratitudes/1/edit
   def edit
+  end
+
+  def like
+    @gratitude = Gratitude.find(params[:id])
+    @gratitude.liked_by current_user
+    redirect_to gratitude_path
+  end
+
+  def dislike
+    @gratitude = Gratitude.find(params[:id])
+    @gratitude.disliked_by current_user
+    redirect_to gratitude_path
   end
 
   # POST /gratitudes
@@ -74,4 +87,6 @@ class GratitudesController < ApplicationController
     def gratitude_params
       params.require(:gratitude).permit(:name, :content, :user_id)
     end
+
+    
 end

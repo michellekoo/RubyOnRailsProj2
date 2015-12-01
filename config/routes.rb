@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   resources :gratitudes
   
   root to: 'gratitudes#index'
+  resources :gratitudes do
+    member do
+        put "like", to: "gratitudes#like"
+        put "dislike", to: "gratitudes#dislike"
+    end
+end
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end

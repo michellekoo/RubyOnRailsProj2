@@ -18,6 +18,18 @@
     <div class="meta">
       <%= link_to time_ago_in_words(gratitude.created_at) + " ago", gratitude %>
       <span class="admin">
+
+  <% if current_user.liked? gratitude %>
+      <%= link_to "Dislike", dislike_gratitude_path(gratitude), method: :put %>
+  <% else %>
+      <%= link_to "Like", like_gratitude_path(gratitude), method: :put %>
+ 
+
+<% end %>
+<%= gratitude.get_likes.size %> <p>users like this</p>
+
+
+
       <%= link_to "Edit", edit_gratitude_path(gratitude) %> |
       <%= link_to "Delete", gratitude, method: :delete, data: {
         confirm: "Are you sure?"} %>
