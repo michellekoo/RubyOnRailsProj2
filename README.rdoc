@@ -1,5 +1,31 @@
 == README
 
+Title: Gratitude Journal
+Team Members: Truong Pham, Michelle Koo, Allyson Koo, Zekun Wang
+Demo Link: https://vast-garden-2073.herokuapp.com/
+
+Idea: An application where users can post their daily gratitudes either publicly
+or privately to support their friends and live happier lives.
+
+Models and Description:
+User
+* Users have a first name, a last name, an email, and a password
+* Users have many gratitudes
+Gratitudes
+* Gratitudes have a user author and content
+* Gratitudes can also be liked
+
+Features:
+* Users can log in
+* Users can post private or public gratitudes
+* Users can like public gratitudes
+
+Division of Labor:
+* Truong Pham: 
+* Michelle Koo:
+* Allyson Koo:
+* Zekun Wang:
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
