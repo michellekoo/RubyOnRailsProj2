@@ -6,13 +6,12 @@
 <div class="gratitude-block">
 
 <div class="page-header">
-    <h2> All Gratitudes </h2>
+    <h2> My Gratitudes </h2>
 </div>
 
 <%= link_to "Post New Gratitude", new_gratitude_path, class:"btn btn-warning" %>
 
-<% @gratitudes.each do |gratitude| %>
-  <% if gratitude.share %>
+<% current_user.gratitudes.each do |gratitude| %>
     <div class="gratitudes">
       <p><b>Name: </b><%= gratitude.try(:user).try(:full_name)%></p>
       <p><strong>Gratitude: </strong><%= gratitude.content %></p>
@@ -26,6 +25,9 @@
         <span class="admin">
 
         <%= gratitude.get_likes.size %> users like this
+        <% if not gratitude.share %>
+          <p>This gratitude is private.</p>
+        <% end %>
         <%= link_to "Edit", edit_gratitude_path(gratitude) %> |
         <%= link_to "Delete", gratitude, method: :delete, data: {
           confirm: "Are you sure?"} %>
@@ -33,7 +35,6 @@
       </div>
 
     </div>
-  <% end %>
 <% end %>
 
 <% else %>

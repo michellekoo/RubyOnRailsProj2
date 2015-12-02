@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202081527) do
+ActiveRecord::Schema.define(version: 20151202161737) do
 
   create_table "gratitudes", force: :cascade do |t|
     t.text     "content"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.boolean  "share",      default: false
+    t.boolean  "share"
   end
 
   add_index "gratitudes", ["user_id"], name: "index_gratitudes_on_user_id"

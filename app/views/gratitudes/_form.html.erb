@@ -13,7 +13,7 @@
 
 <%= f.hidden_field :user_id %> 
 <%= f.input :content %>
-<%= f.input_field :share, :inline_label => 'Share?' %> 
+<%= f.input_field :share, :inline_label => 'Share publicly?', as: :boolean, checked_value: true, unchecked_value: false %> 
   <div class="form-actions">
     <%= f.submit %>
   </div>

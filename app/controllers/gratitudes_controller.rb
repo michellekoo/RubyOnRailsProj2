@@ -8,6 +8,9 @@ class GratitudesController < ApplicationController
     @gratitudes = Gratitude.all
   end
 
+  def mygrats
+    @gratitudes = Gratitude.all
+  end
   # GET /gratitudes/1
   # GET /gratitudes/1.json
   def show
@@ -41,6 +44,7 @@ class GratitudesController < ApplicationController
     if @gratitude.user_id == nil
       @gratitude.user_id = current_user.id
     end
+    #@gratitude.update_column(params[:share])
 
     respond_to do |format|
       if @gratitude.save
@@ -57,7 +61,7 @@ class GratitudesController < ApplicationController
   # PATCH/PUT /gratitudes/1.json
   def update
     respond_to do |format|
-      if @gratitude.update(gratitude_params)
+      if @gratitude.update!(gratitude_params)
         format.html { redirect_to @gratitude, notice: 'Gratitude was successfully updated.' }
         format.json { render :show, status: :ok, location: @gratitude }
       else
