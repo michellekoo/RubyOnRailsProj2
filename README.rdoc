@@ -1,54 +1,38 @@
 == README
 
 Title: Gratitude Journal
+
 Team Members: Truong Pham, Michelle Koo, Allyson Koo, Zekun Wang
+
 Demo Link: https://vast-garden-2073.herokuapp.com/
+
+Screencast Demo Link: https://youtu.be/I0FkVi6GQhk
 
 Idea: An application where users can post their daily gratitudes either publicly
 or privately to support their friends and live happier lives.
 
 Models and Description:
-User
+
+User:
 * Users have a first name, a last name, an email, and a password
 * Users have many gratitudes
-Gratitudes
+
+Gratitudes:
 * Gratitudes have a user author and content
 * Gratitudes can also be liked
+
+Likes:
+* Users can like gratitudes 
+* Each gratitude has likes
 
 Features:
 * Users can log in
 * Users can post private or public gratitudes
-* Users can like public gratitudes
+* Users can like public gratitudes or their own
 
 Division of Labor:
-* Truong Pham: 
-* Michelle Koo:
-* Allyson Koo:
-* Zekun Wang:
+* Truong Pham: Created models and views, Added all of user authentication, Helped debugged
+* Michelle Koo: Added overall style, Created about page, Added private/public functionality, Deployed to Heroku, Helped debugged
+* Allyson Koo: Added likes to gratitudes, Added gems and migrations, Created seed file, Helped debugged
+* Zekun Wang: Added bootstrap, Deployed to Heroku, Helped debugged 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

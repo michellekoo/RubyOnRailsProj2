@@ -26,9 +26,11 @@
         <span class="admin">
 
         <%= gratitude.get_likes.size %> users like this
-        <%= link_to "Edit", edit_gratitude_path(gratitude) %> |
-        <%= link_to "Delete", gratitude, method: :delete, data: {
-          confirm: "Are you sure?"} %>
+        <% if gratitude.user == current_user %>
+          <%= link_to "Edit", edit_gratitude_path(gratitude) %> |
+          <%= link_to "Delete", gratitude, method: :delete, data: {
+            confirm: "Are you sure?"} %>
+        <% end %>
         </span>
       </div>
 
