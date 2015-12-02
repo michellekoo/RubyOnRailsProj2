@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :gratitudes
   
-  root to: 'gratitudes#index'
+  #root to: 'gratitudes#index'
+  authenticated do
+    root :to => 'gratitudes#index', as: :authenticated
+  end
+
+  root :to => 'static_pages#about'
+
   resources :gratitudes do
     member do
         put "like", to: "gratitudes#like"
