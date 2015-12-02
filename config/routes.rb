@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         put "like", to: "gratitudes#like"
         put "dislike", to: "gratitudes#dislike"
     end
+  get '/about', to: 'static_pages#about', :as => 'about_page'
 end
   # devise_scope :user do
   #   root to: "devise/sessions#new"
